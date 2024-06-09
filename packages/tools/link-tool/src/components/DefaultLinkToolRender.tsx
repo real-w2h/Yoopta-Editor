@@ -59,7 +59,7 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
       </div>
       <div className="yoo-link-tool-mt-2">
         <label htmlFor="url" className="yoopta-link-tool-label">
-          Link URL
+          Select Page
         </label>
         <input
           id="url"
