@@ -4048,7 +4048,7 @@ ansi-styles@^6.0.0, ansi-styles@^6.1.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
   integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
 
-antd@^5.12.8:
+antd@^5.9.4:
   version "5.18.0"
   resolved "https://registry.yarnpkg.com/antd/-/antd-5.18.0.tgz#78e3a7b3024e2db642a1046eb8f6c5eee0ae4bb3"
   integrity sha512-xAvqvioW34npeZb8/JLZmCh5mcHU5MLiA0IYWAlpLAVmSgjs3p0tNzbU6a7Yx+y7o7E8PHtlchWfO3yBLQ15FQ==
