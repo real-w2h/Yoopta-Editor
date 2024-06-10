@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { LinkToolRenderProps, Link } from '../types';
 import ChevronUp from '../icons/chevronup.svg';
+import { Select } from 'antd';
 
 const DEFAULT_LINK_VALUE: Link = {
   url: '',
@@ -74,6 +75,7 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
         <label htmlFor="title" className="yoopta-link-tool-label">
           Link title
         </label>
+        <Select />
         <input
           id="title"
           type="text"
