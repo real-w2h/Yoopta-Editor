@@ -1,8 +1,8 @@
 {
   "name": "yoopta",
   "workspaces": [
-    "packages/plugins/*",
-    "packages/tools/*",
+    "packages/plugins/link",
+    "packages/tools/link-tool",
     "packages/marks/*",
     "packages/core/*",
     "packages/development"
