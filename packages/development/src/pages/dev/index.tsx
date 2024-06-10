@@ -9,22 +9,22 @@ import YooptaEditor, {
 import Blockquote from '@yoopta/blockquote';
 import Paragraph from '@yoopta/paragraph';
 import Headings from '@yoopta/headings';
-import Image from '@yoopta/image';
+// import Image from '@yoopta/image';
 import { Bold, Italic, Highlight, CodeMark, Strike, Underline } from '@yoopta/marks';
 import Callout from '@yoopta/callout';
 import Lists from '@yoopta/lists';
 import Link from '@yoopta/link';
-import Video from '@yoopta/video';
-import File from '@yoopta/file';
-import Embed from '@yoopta/embed';
-import AccordionPlugin from '@yoopta/accordion';
-import ActionMenuList, { DefaultActionMenuRender } from '@yoopta/action-menu-list';
+// import Video from '@yoopta/video';
+// import File from '@yoopta/file';
+// import Embed from '@yoopta/embed';
+// import AccordionPlugin from '@yoopta/accordion';
+// import ActionMenuList, { DefaultActionMenuRender } from '@yoopta/action-menu-list';
 import LinkTool, { DefaultLinkToolRender } from '@yoopta/link-tool';
 import Toolbar, { DefaultToolbarRender } from '@yoopta/toolbar';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { uploadToCloudinary } from '../../utils/cloudinary';
 
-import Code from '@yoopta/code';
+// import Code from '@yoopta/code';
 import { ActionNotionMenuExample } from '../../components/ActionMenuExamples/NotionExample/ActionNotionMenuExample';
 import { NotionToolbar } from '../../components/Toolbars/NotionToolbar/NotionToolbar';
 import { ACCORDION_BLOCK } from '../../components/customPlugins/Accordion/Accordion';
@@ -32,22 +32,22 @@ import { ACCORDION_BLOCK } from '../../components/customPlugins/Accordion/Accord
 // import Mention from '@yoopta/mention';
 
 const plugins = [
-  AccordionPlugin,
-  Code,
-  File.extend({
-    options: {
-      onUpload: async (file: File) => {
-        const data = await uploadToCloudinary(file, 'auto');
+  // AccordionPlugin,
+  // Code,
+  // File.extend({
+  //   options: {
+  //     onUpload: async (file: File) => {
+  //       const data = await uploadToCloudinary(file, 'auto');
 
-        return {
-          src: data.secure_url,
-          format: data.format,
-          name: data.name,
-          size: data.bytes,
-        };
-      },
-    },
-  }),
+  //       return {
+  //         src: data.secure_url,
+  //         format: data.format,
+  //         name: data.name,
+  //         size: data.bytes,
+  //       };
+  //     },
+  //   },
+  // }),
   Paragraph.extend({
     options: {
       HTMLAttributes: {
@@ -55,44 +55,44 @@ const plugins = [
       },
     },
   }),
-  Image.extend({
-    // renders: {
-    //   image: ({ attributes, children, element, blockId }) => {
-    //     return (
-    //       <div>
-    //         <img
-    //           draggable={false}
-    //           className="yoo-h-mt-6 yoo-h-scroll-m-20"
-    //           {...attributes}
-    //         />
-    //         {children}
-    //       </div>
-    //     );
-    //   },
-    // },
-    options: {
-      maxSizes: {
-        maxHeight: 800,
-      },
-      HTMLAttributes: {
-        className: 'image-element-extended',
-      },
+  // Image.extend({
+  // renders: {
+  //   image: ({ attributes, children, element, blockId }) => {
+  //     return (
+  //       <div>
+  //         <img
+  //           draggable={false}
+  //           className="yoo-h-mt-6 yoo-h-scroll-m-20"
+  //           {...attributes}
+  //         />
+  //         {children}
+  //       </div>
+  //     );
+  //   },
+  // },
+  //   options: {
+  //     maxSizes: {
+  //       maxHeight: 800,
+  //     },
+  //     HTMLAttributes: {
+  //       className: 'image-element-extended',
+  //     },
 
-      onUpload: async (file: File) => {
-        const data = await uploadToCloudinary(file);
+  //     onUpload: async (file: File) => {
+  //       const data = await uploadToCloudinary(file);
 
-        return {
-          src: data.secure_url,
-          alt: 'cloudinary',
-          fit: 'fill',
-          sizes: {
-            width: data.width,
-            height: data.height,
-          },
-        };
-      },
-    },
-  }),
+  //       return {
+  //         src: data.secure_url,
+  //         alt: 'cloudinary',
+  //         fit: 'fill',
+  //         sizes: {
+  //           width: data.width,
+  //           height: data.height,
+  //         },
+  //       };
+  //     },
+  //   },
+  // }),
   Headings.HeadingOne.extend({
     options: {
       HTMLAttributes: {
@@ -134,26 +134,26 @@ const plugins = [
   }),
   Lists.NumberedList,
   Lists.TodoList,
-  Embed,
-  Video.extend({
-    options: {
-      HTMLAttributes: {
-        className: 'video-element-extended',
-      },
-      onUpload: async (file: File) => {
-        const data = await uploadToCloudinary(file, 'video');
-        return {
-          src: data.secure_url,
-          alt: 'cloudinary',
-          fit: 'cover',
-          sizes: {
-            width: data.width,
-            height: data.height,
-          },
-        };
-      },
-    },
-  }),
+  // Embed,
+  // Video.extend({
+  //   options: {
+  //     HTMLAttributes: {
+  //       className: 'video-element-extended',
+  //     },
+  //     onUpload: async (file: File) => {
+  //       const data = await uploadToCloudinary(file, 'video');
+  //       return {
+  //         src: data.secure_url,
+  //         alt: 'cloudinary',
+  //         fit: 'cover',
+  //         sizes: {
+  //           width: data.width,
+  //           height: data.height,
+  //         },
+  //       };
+  //     },
+  //   },
+  // }),
   Link.extend({
     options: {
       HTMLAttributes: {
@@ -166,14 +166,14 @@ const plugins = [
 const MARKS = [Bold, Italic, Highlight, CodeMark, Strike, Underline];
 
 const TOOLS: Tools = {
-  ActionMenu: {
-    // render: ActionNotionMenuExample,
-    render: DefaultActionMenuRender,
-    tool: ActionMenuList,
-    props: {
-      // items: ['Callout', 'Blockquote', 'HeadingOne', 'HeadingTwo', 'HeadingThree', 'Image', 'File'],
-    },
-  },
+  // ActionMenu: {
+  //   // render: ActionNotionMenuExample,
+  //   render: DefaultActionMenuRender,
+  //   tool: ActionMenuList,
+  //   props: {
+  //     // items: ['Callout', 'Blockquote', 'HeadingOne', 'HeadingTwo', 'HeadingThree', 'Image', 'File'],
+  //   },
+  // },
   Toolbar: {
     render: DefaultToolbarRender,
     // render: NotionToolbar,

@@ -40,6 +40,34 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
     props.onDelete();
   };
 
+
+  const options = [
+    {
+      label: 'gold',
+      value: 'gold',
+    },
+    {
+      label: 'lime',
+      value: 'lime',
+    },
+    {
+      label: 'green',
+      value: 'green',
+    },
+    {
+      label: 'cyan',
+      value: 'cyan',
+    },
+  ];
+  const labelRender = (props) => {
+    const { label, value } = props;
+    if (label) {
+      return value;
+    }
+    return <span>当前 value 没有对应的选项</span>;
+  };
+
+
   return (
     <div className="yoopta-link-tool yoo-link-tool-shadow-y-[4px]">
       <div className="">
@@ -61,7 +89,15 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
         <label htmlFor="url" className="yoopta-link-tool-label">
           Select Page
         </label>
-        <input
+        <Select
+          labelRender={labelRender}
+          defaultValue="1"
+          style={{
+            width: '100%',
+          }}
+          options={options}
+        />
+        {/* <input
           id="url"
           type="text"
           className="yoopta-link-tool-input"
@@ -70,7 +106,7 @@ const DefaultLinkToolRender = (props: LinkToolRenderProps) => {
           onChange={onChange}
           placeholder="Edit link URL"
           autoComplete="off"
-        />
+        /> */}
       </div>
       <button
         type="button"

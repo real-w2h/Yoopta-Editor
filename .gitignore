@@ -67,3 +67,4 @@ test-results/
 .pnp.*
 
 .env
+rollup*.cjs
